@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arya Mardhani Syaputra | Digital Business Innovator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00f0ff',
+                        secondary: '#ff00f0',
+                        dark: '#0a0a0a',
+                        darker: '#050505',
+                        accent: '#00ff9d',
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        poppins: ['Poppins', 'sans-serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 6s infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 2s ease-in-out infinite alternate',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        glow: {
+                            '0%': { 'text-shadow': '0 0 5px #00f0ff, 0 0 10px #00f0ff' },
+                            '100%': { 'text-shadow': '0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 30px #00f0ff' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+        
+        .nav-glass {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 240, 255, 0.1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 240, 255, 0.3);
+            border: 1px solid rgba(0, 240, 255, 0.3);
+        }
+        
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 24px;
+            height: calc(100% - 24px);
+            width: 2px;
+            background: linear-gradient(to bottom, #00f0ff, #ff00f0);
+        }
+        
+        .progress-bar {
+            height: 6px;
+            border-radius: 3px;
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+            background: linear-gradient(90deg, #00f0ff, #00ff9d);
+            transition: width 1s ease-in-out;
+        }
+        
+        .btn-neon {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-neon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.4), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+        
+        .btn-neon:hover::before {
+            left: 100%;
+        }
+        
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px);
+            filter: drop-shadow(0 0 8px currentColor);
+        }
+        
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .circuit-bg {
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MCIgaGVpZ2h0PSI1MCIgdmlld0JveD0iMCAwIDUwIDUwIj48cGF0aCBkPSJNIDAgMCBMIDAgNTAgTCA1MCA1MCBMIDUwIDAgTCAwIDAgTSAxMCAxMCBMIDEwIDQwIEwgNDAgNDAgTCA0MCAxMCBMIDEwIDEwIiBmaWxsPSJub25lIiBzdHJva2U9IiMwMGYwZmYiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2Utb3BhY2l0eT0iMC4xIi8+PC9zdmc+');
+            background-size: 50px 50px;
+        }
+    </style>
+</head>
+<body class="font-poppins">
+    <!-- Navigation -->
+    <nav class="nav-glass fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <span class="text-primary font-orbitron text-xl font-bold tracking-wider">ARYA MARDHANI SYAPUTRA</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-white hover:text-primary transition-all font-medium">Home</a>
+                    <a href="#about" class="text-white hover:text-primary transition-all font-medium">About</a>
+                    <a href="#projects" class="text-white hover:text-primary transition-all font-medium">Projects</a>
+                    <a href="#skills" class="text-white hover:text-primary transition-all font-medium">Skills</a>
+                    <a href="#experience" class="text-white hover:text-primary transition-all font-medium">Experience</a>
+                    <a href="#contact" class="text-white hover:text-primary transition-all font-medium">Contact</a>
+                </div>
+                
+                <!-- Mobile Navigation Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-darker pb-4 px-6">
+            <div class="flex flex-col space-y-4 pt-2">
+                <a href="#home" class="text-white hover:text-primary transition-all font-medium">Home</a>
+                <a href="#about" class="text-white hover:text-primary transition-all font-medium">About</a>
+                <a href="#projects" class="text-white hover:text-primary transition-all font-medium">Projects</a>
+                <a href="#skills" class="text-white hover:text-primary transition-all font-medium">Skills</a>
+                <a href="#experience" class="text-white hover:text-primary transition-all font-medium">Experience</a>
+                <a href="#contact" class="text-white hover:text-primary transition-all font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-16">
+        <div id="particles-js"></div>
+        <div class="container mx-auto px-6 hero-content">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-4 font-orbitron">
+                        <span class="text-primary">Digital Business</span><br>
+                        <span class="text-white">Innovator</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8 max-w-lg">
+                        Bridging technology and business strategy to create digital solutions that drive growth and transformation.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#projects" class="bg-primary text-dark font-bold py-3 px-6 rounded-full btn-neon hover:bg-opacity-90 transition-all">
+                            View Portfolio
+                        </a>
+                        <button onclick="downloadCV()" class="border-2 border-primary text-primary font-bold py-3 px-6 rounded-full btn-neon hover:bg-primary hover:bg-opacity-10 transition-all">
+                            Download CV
+                        </button>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute inset-0 rounded-full bg-primary blur-xl opacity-20 animate-pulse-slow"></div>
+                        <img src="profile.jpg" 
+                             alt="Alex Chen" 
+                             class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-primary relative z-10 animate-float">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-darker px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center font-orbitron">
+                <span class="border-b-4 border-primary pb-2">About Me</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-10">
+                    <h3 class="text-2xl font-bold mb-4 text-primary font-orbitron">Digital Business Student & Tech Enthusiast</h3>
+                    <p class="text-lg mb-6">
+                        I'm Arya Mardhani Syaputra, a passionate Digital Business student at Surabaya State University of Technology and Design. My journey at the intersection of technology and business has equipped me with unique insights into digital transformation strategies.
+                    </p>
+                    <p class="text-lg mb-8">
+                        I specialize in analyzing market trends, developing digital strategies, and implementing tech solutions that drive business growth. My approach combines analytical thinking with creative problem-solving to deliver impactful results.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center">
+                            <i class="fas fa-graduation-cap text-primary mr-4 text-xl"></i>
+                            <span><strong>B.Sc Digital Business</strong> - SUTD (2022-2025)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-lightbulb text-primary mr-4 text-xl"></i>
+                            <span>Founder of <strong>Digital Solutions Club</strong> at university</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-rocket text-primary mr-4 text-xl"></i>
+                            <span>Passionate about <strong>startups</strong> and <strong>digital innovation</strong></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative">
+                        <div class="absolute -inset-4 bg-gradient-to-r from-primary to-accent rounded-xl opacity-20 blur-lg"></div>
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=500&q=80" 
+                             alt="About Alex" 
+                             class="rounded-xl shadow-xl w-full max-w-md relative z-10">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center font-orbitron">
+                <span class="border-b-4 border-primary pb-2">Featured Projects</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-darker rounded-xl p-6 card-hover">
+                    <div class="overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=300&q=80" 
+                             alt="E-commerce Analytics Dashboard" 
+                             class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-orbitron">E-commerce Analytics Dashboard</h3>
+                    <p class="text-gray-300 mb-4">
+                        Developed a comprehensive analytics dashboard for an online retailer, improving decision-making with real-time data visualization.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Google Data Studio</span>
+                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Excel</span>
+                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">SQL</span>
+                    </div>
+                    <button class="text-primary hover:underline font-medium">View Case Study →</button>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-darker rounded-xl p-6 card-hover">
+                    <div class="overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=300&q=80" 
+                             alt="Social Media Strategy" 
+                             class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-orbitron">Social Media Strategy</h3>
+                    <p class="text-gray-300 mb-4">
+                        Created and executed a social media marketing strategy for a startup, increasing engagement by 75% in 3 months.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Instagram</span>
+                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">TikTok</span>
+                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Canva</span>
+                    </div>
+                    <button class="text-primary hover:underline font-medium">View Case Study →</button>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-darker rounded-xl p-6 card-hover">
+                    <div class="overflow-hidden rounded-lg mb-4">
+                        <img src="https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&h=300&q=80" 
+                             alt="Digital Transformation Plan" 
+                             class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-bold mb-2 font-orbitron">Digital Transformation Plan</h3>
+                    <p class="text-gray-300 mb-4">
+                        Designed a 12-month digital transformation roadmap for a traditional retailer, increasing online sales by 40%.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Strategy</span>
+                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Process Mapping</span>
+                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Change Management</span>
+                    </div>
+                    <button class="text-primary hover:underline font-medium">View Case Study →</button>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="border-2 border-primary text-primary font-bold py-3 px-8 rounded-full btn-neon hover:bg-primary hover:bg-opacity-10 transition-all">
+                    View All Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-darker px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center font-orbitron">
+                <span class="border-b-4 border-primary pb-2">Skills & Expertise</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-primary font-orbitron">Technical Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div class="flex items-center">
+                                    <i class="fab fa-google text-lg mr-3 text-primary"></i>
+                                    <span>Digital Marketing</span>
+                                </div>
+                                <span class="text-sm">90%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-chart-line text-lg mr-3 text-primary"></i>
+                                    <span>Data Analysis</span>
+                                </div>
+                                <span class="text-sm">85%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-paint-brush text-lg mr-3 text-primary"></i>
+                                    <span>UI/UX Design</span>
+                                </div>
+                                <span class="text-sm">75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold mb-6 text-primary font-orbitron">Business Skills</h3>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-bullseye text-lg mr-3 text-primary"></i>
+                                    <span>Strategic Planning</span>
+                                </div>
+                                <span class="text-sm">88%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 88%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-file-alt text-lg mr-3 text-primary"></i>
+                                    <span>Business Modeling</span>
+                                </div>
+                                <span class="text-sm">82%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 82%"></div>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="flex justify-between mb-2">
+                                <div class="flex items-center">
+                                    <i class="fas fa-comments-dollar text-lg mr-3 text-primary"></i>
+                                    <span>Digital Sales</span>
+                                </div>
+                                <span class="text-sm">80%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12">
+                <h3 class="text-xl font-bold mb-6 text-primary font-orbitron">Tools & Technologies</h3>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <div class="bg-dark text-primary px-6 py-3 rounded-lg flex flex-col items-center">
+                        <i class="fab fa-google text-3xl mb-2"></i>
+                        <span>Google Analytics</span>
+                    </div>
+                    <div class="bg-dark text-primary px-6 py-3 rounded-lg flex flex-col items-center">
+                        <i class="fab fa-figma text-3xl mb-2"></i>
+                        <span>Figma</span>
+                    </div>
+                    <div class="bg-dark text-primary px-6 py-3 rounded-lg flex flex-col items-center">
+                        <i class="fas fa-file-excel text-3xl mb-2"></i>
+                        <span>Excel</span>
+                    </div>
+                    <div class="bg-dark text-primary px-6 py-3 rounded-lg flex flex-col items-center">
+                        <i class="fab fa-wordpress text-3xl mb-2"></i>
+                        <span>WordPress</span>
+                    </div>
+                    <div class="bg-dark text-primary px-6 py-3 rounded-lg flex flex-col items-center">
+                        <i class="fas fa-database text-3xl mb-2"></i>
+                        <span>SQL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 px-6">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center font-orbitron">
+                <span class="border-b-4 border-primary pb-2">Experience & Education</span>
+            </h2>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="space-y-8">
+                    <!-- Experience 1 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-gradient-to-r from-primary to-accent"></div>
+                        <div class="bg-darker p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                                <h3 class="text-xl font-bold font-orbitron">Digital Marketing Intern</h3>
+                                <span class="text-primary">Jun 2023 - Present</span>
+                            </div>
+                            <h4 class="text-lg mb-3">TechSolutions Inc.</h4>
+                            <p class="text-gray-300">
+                                Developed and executed digital marketing campaigns that increased lead generation by 40%. Analyzed customer data to optimize ad spend and improve ROI.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Education 1 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-gradient-to-r from-primary to-accent"></div>
+                        <div class="bg-darker p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                                <h3 class="text-xl font-bold font-orbitron">B.Sc Digital Business</h3>
+                                <span class="text-primary">Aug 2023 - Present</span>
+                            </div>
+                            <h4 class="text-lg mb-3">Surabaya State University</h4>
+                            <p class="text-gray-300">
+                                Specializing in digital transformation, e-commerce strategies, and data-driven decision making. GPA: 3.8/4.0
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Experience 2 -->
+                    <div class="timeline-item relative pl-8">
+                        <div class="absolute left-0 top-0 w-4 h-4 rounded-full bg-gradient-to-r from-primary to-accent"></div>
+                        <div class="bg-darker p-6 rounded-lg">
+                            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+                                <h3 class="text-xl font-bold font-orbitron">Founder & President</h3>
+                                <span class="text-primary">Jan 2023 - Present</span>
+                            </div>
+                            <h4 class="text-lg mb-3">Digital Solutions Club</h4>
+                            <p class="text-gray-300">
+                                Established a university club focused on digital innovation, organizing workshops and hackathons with 150+ active members.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-darker px-6 circuit-bg">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center font-orbitron">
+                <span class="border-b-4 border-primary pb-2">Get In Touch</span>
+            </h2>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-bold mb-6 font-orbitron">Send Me a Message</h3>
+                    
+                    <form class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full bg-dark border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-all">
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block mb-2">Email</label>
+                            <input type="email" id="email" class="w-full bg-dark border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-all">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full bg-dark border border-gray-800 rounded-lg px-4 py-3 focus:outline-none focus:border-primary transition-all"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="bg-primary text-dark font-bold py-3 px-8 rounded-full btn-neon hover:bg-opacity-90 transition-all">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <h3 class="text-xl font-bold mb-6 font-orbitron">Contact Information</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-primary text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Email</h4>
+                                <p class="text-gray-300">aryamardhanisyaputra@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-primary text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Phone</h4>
+                                <p class="text-gray-300">+62 881 0274 8755 9</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-primary text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Location</h4>
+                                <p class="text-gray-300">Surabaya, Indonesia</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-12">
+                        <h3 class="text-xl font-bold mb-6 font-orbitron">Connect With Me</h3>
+                        
+                        <div class="flex space-x-6">
+                            <a href="https://www.linkedin.com/in/arya-mardhani-syaputra/" target="_blank" class="social-icon text-primary text-2xl">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="https://www.instagram.com/arrsyy_aa?igsh=MXQ4dmlzeDRmNHo2eQ==" target="_blank" class="social-icon text-primary text-2xl">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="https://github.com/aryaxxx122" target="_blank" class="social-icon text-primary text-2xl">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://twitter.com/namakamu" target="_blank" class="social-icon text-primary text-2xl">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-8 px-6 border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-xl font-bold font-orbitron">ARYA MARDHANI SYAPUTRA</span>
+                    <p class="text-gray-400 mt-1">Digital Business Innovator</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#home" class="text-gray-400 hover:text-primary transition-all">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-primary transition-all">About</a>
+                    <a href="#projects" class="text-gray-400 hover:text-primary transition-all">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-primary transition-all">Contact</a>
+                </div>
+            </div>
+            
+            <div class="mt-8 pt-6 border-t border-gray-800 text-center text-gray-400">
+                <p class="font-orbitron">© 2025 Arya Mardhani Syaputra. BUILT WITH FUTURISTIC VISION.</p>
+            </div>
+            
+            <button id="back-to-top" class="fixed bottom-6 right-6 bg-primary text-dark w-12 h-12 rounded-full flex items-center justify-center shadow-lg hover:bg-opacity-90 transition-all opacity-0 invisible">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Download CV function
+        function downloadCV() {
+            alert('CV download will start. (Simulation)');
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu if open
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible');
+                backToTopButton.classList.add('opacity-100', 'visible');
+            } else {
+                backToTopButton.classList.remove('opacity-100', 'visible');
+                backToTopButton.classList.add('opacity-0', 'invisible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Particles.js initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#00f0ff"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            },
+                            "polygon": {
+                                "nb_sides": 5
+                            }
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": true,
+                            "anim": {
+                                "enable": true,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": false,
+                                "speed": 40,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#00f0ff",
+                            "opacity": 0.2,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 2,
+                            "direction": "none",
+                            "random": true,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 0.5
+                                }
+                            },
+                            "bubble": {
+                                "distance": 400,
+                                "size": 40,
+                                "duration": 2,
+                                "opacity": 8,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 200,
+                                "duration": 0.4
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            }
+        });
+        
+        // Animate progress bars on scroll
+        function animateProgressBars() {
+            const progressBars = document.querySelectorAll('.progress-fill');
+            
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+        
+        // Intersection Observer for progress bars animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateProgressBars();
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const skillsSection = document.getElementById('skills');
+        if (skillsSection) {
+            observer.observe(skillsSection);
+        }
+    </script>
+</body>
+</html>
