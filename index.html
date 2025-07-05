@@ -52,6 +52,12 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
         }
+       
+        .fade-bottom {
+            -webkit-mask-image: linear-gradient(to top, transparent 15%, black 40%);
+            mask-image: linear-gradient(to top, transparent 15%, black 40%);
+        }
+
         .card-hover {
             transition: all 0.3s ease;
             border: 1px solid rgba(0, 240, 255, 0.1);
@@ -214,13 +220,19 @@
         <div id="particles-js"></div>
         <div class="container mx-auto px-6 hero-content">
             <div class="flex flex-col md:flex-row items-center justify-between">
+                <div class="md:w-1/2 flex justify-center">
+                    <div class="relative w-fit">
+                        <img src="profile (2).png" alt="Arya Mardhani Syaputra" class="w-60 h-70 md:w-80 md:h-100 object-cover">
+                        <div class="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-dark to-transparent"></div>
+                    </div>
+                </div>
                 <div class="md:w-1/2 mb-12 md:mb-0">
                     <h1 class="text-4xl md:text-6xl font-bold mb-4 font-orbitron">
-                        <span class="text-primary">Digital Marketing</span><br>
+                        <span class="text-primary">Business Development</span><br>
                         <span class="text-white">Strategist</span>
                     </h1>
                     <p class="text-xl text-gray-300 mb-8 max-w-lg">
-                        Blending creativity, analytics, and technology to build impactful digital strategies that elevate brand presence and drive conversion.
+                        Combining business development strategy with technological innovation, leveraging AI and automation to accelerate growth, build strategic partnerships, and unlock new revenue opportunities.
                     </p>
                     <div class="flex flex-wrap gap-4">
                         <a href="#projects" class="bg-primary text-dark font-bold py-3 px-6 rounded-full btn-neon hover:bg-opacity-90 transition-all">
@@ -241,12 +253,6 @@
                         </script>
                     </div>
                 </div>
-                <div class="md:w-1/2 flex justify-center">
-                    <div class="relative">
-                        <div class="absolute inset-0 rounded-full bg-primary blur-xl opacity-20 animate-pulse-slow"></div>
-                        <img src="profile.jpg" alt="Arya Mardhani Syaputra" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-primary relative z-10 animate-float">
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -258,12 +264,12 @@
             </h2>
             <div class="flex flex-col md:flex-row items-center">
                 <div class="md:w-1/2 mb-8 md:mb-0 md:pr-10">
-                    <h3 class="text-2xl font-bold mb-4 text-primary font-orbitron">Digital Business Student & Digital Marketing Enthusiast</h3>
+                    <h3 class="text-2xl font-bold mb-4 text-primary font-orbitron">Digital Business Student | Growth & Automation Specialist</h3>
                     <p class="text-lg mb-6">
-                        I'm Arya Mardhani Syaputra, a passionate Digital Business student at Surabaya State University. My journey at the intersection of technology and business has equipped me with unique insights into digital transformation strategies.
+                        I'm Arya Mardhani Syaputra, a passionate Digital Business student at Surabaya State University.  My studies in technology and business have sparked a particular interest in leveraging AI automation for strategic business development.
                     </p>
                     <p class="text-lg mb-8">
-                        I specialize in analyzing market trends, developing digital strategies, and implementing tech solutions that drive business growth. My approach combines analytical thinking with creative problem-solving to deliver impactful results.
+                        I'm developing skills in analyzing market trends and applying AI powered solutions to optimize lead generation, personalize customer engagement, and identify new avenues for business growth through innovation.
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-center">
@@ -272,7 +278,7 @@
                         </div>
                         <div class="flex items-center">
                             <i class="fas fa-rocket text-primary mr-4 text-xl"></i>
-                            <span>Passionate about <strong>technology</strong> and <strong>digital marketing</strong></span>
+                            <span>Passionate about <strong>technology</strong> and <strong>business deve</strong></span>
                         </div>
                     </div>
                 </div>
@@ -286,85 +292,128 @@
         </div>
     </section>
 
-    <section id="projects" class="py-20 px-6">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold mb-12 text-center font-orbitron">
-                <span class="border-b-4 border-primary pb-2">Featured Projects</span>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <section id="projects" class="py-20 px-6 bg-darker">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-12 text-center font-orbitron">
+            <span class="border-b-4 border-primary pb-2">Featured Projects</span>
+        </h2>
+        
+        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <div class="bg-darker rounded-xl p-6 card-hover" 
-                     data-title="Real Estate Digital Marketing"
-                     data-image-src="cluvestates.jpg"
-                     data-tags="Content Strategy,Scriptwriting,Video Production,Instagram analytics"
-                     data-description="As part of the marketing team, I was responsible for executing property marketing strategies across various social media platforms. The primary focus was managing organic content and paid advertising campaigns on Instagram, Facebook, and TikTok to increase brand awareness and reach potential buyers. Each campaign was designed to drive traffic to optimized landing pages, with the main objective of consistently generating a stream of high-quality leads for the sales team to pursue.">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="cluvestates.jpg" alt="Real Estate Digital Marketing" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 font-orbitron">Real Estate Digital Marketing</h3>
-                    <p class="text-gray-300 mb-4">
-                        Managed digital ad campaigns and landing page optimization for real estate developers, focusing on generating quality sales leads to support the sales team.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Content Strategy</span>
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Scriptwriting</span>
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Video Production</span>
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Instagram analytics</span>
-                    </div>
-                    <button class="open-modal-btn text-primary hover:underline font-medium">View Case Study →</button>
+           <div class="project-card bg-dark rounded-xl p-6 card-hover"
+                data-title="Intelligent Prospect Identification System"
+                data-image-src="crm.png"
+                data-tags="AI Agents,LLM Integration,Data Scraping,Lead Generation Strategy"
+                data-description="Developed a fully automated system to streamline the business development prospecting process. The workflow begins by reading an Ideal Customer Profile (ICP) from a data source. It then autonomously searches for relevant articles and company information online. An AI Agent, powered by the Google Gemini model, analyzes the collected data, scores each prospect against the ICP, and extracts key information into a structured format. High-scoring, qualified prospects are then automatically created as new company records in a CRM or database. This system significantly increases the efficiency and quality of the lead generation funnel.">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="crm.png" alt="Intelligent Prospect Identification System" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
                 </div>
-
-                <div class="bg-darker rounded-xl p-6 card-hover"
-                    data-title="TikTok Content Strategy"
-                    data-image-src="satukata.png"
-                    data-tags="Scriptwriting,TikTok Analytics,Content Strategy,Video Production"
-                    data-description="Fully managed the content strategy and execution for a TikTok account focused on motivation and self-development. Responsibilities covered the entire production cycle: from idea research and trend analysis, scriptwriting, to editing videos into engaging content. Beyond production, the role involved actively building and nurturing the community through two-way interaction to increase audience engagement and loyalty, ensuring healthy and sustainable account growth.">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="satukata.png" alt="TikTok Content Strategy" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 font-orbitron">TikTok Content Strategy</h3>
-                    <p class="text-gray-300 mb-4">
-                        Managed the full content lifecycle for a motivational TikTok account, from strategy and video production to fostering an engaged community through active interaction.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Scriptwriting</span>
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">TikTok Analytics</span>
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Content Strategy</span>
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Video Production</span>
-                    </div>
-                    <button class="open-modal-btn text-primary hover:underline font-medium">View Case Study →</button>
+                <h3 class="text-xl font-bold mb-2 font-orbitron">Intelligent Prospect Identification System</h3>
+                <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    Designed an AI-powered automation system to autonomously identify, analyze, and qualify sales prospects based on predefined criteria, streamlining the lead generation process.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">AI Agents</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">LLM Integration</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Data Scraping</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Lead Generation Strategy</span>
                 </div>
-
-                <div class="bg-darker rounded-xl p-6 card-hover"
-                    data-title="Automated Investment Research Agent"
-                    data-image-src="n8n.png"
-                    data-tags="AI Agents,API Integration,NLP,Web Scraping,Management"
-                    data-description="Built a proof-of-concept (POC) for an investment research automation system using AI technology. This project involved developing an autonomous agent in Python, capable of web scraping to collect financial data and news from various sources. By utilizing NLP to summarize information, the system was designed to prove the feasibility of automating raw data filtering and accelerating the identification of potential investment signals for the end-user.">
-                    <div class="overflow-hidden rounded-lg mb-4">
-                        <img src="n8n.png" alt="Automated Investment Research Agent" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <h3 class="text-xl font-bold mb-2 font-orbitron">Automated Investment Research Agent</h3>
-                    <p class="text-gray-300 mb-4">
-                       Built a proof-of-concept AI system using an autonomous agent to extract and summarize online financial data, accelerating the investment research process.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">AI Agents</span>
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">API Integration</span>
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">NLP</span>
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Web Scraping</span>
-                        <span class="bg-dark text-primary px-3 py-1 rounded-full text-sm">Management</span>
-                    </div>
-                    <button class="open-modal-btn text-primary hover:underline font-medium">View Case Study →</button>
-                </div>
-
+                <button class="open-modal-btn text-primary hover:underline font-medium">View Case Study →</button>
             </div>
-            <div class="text-center mt-12">
-                <button class="border-2 border-primary text-primary font-bold py-3 px-8 rounded-full btn-neon hover:bg-primary hover:bg-opacity-10 transition-all">
-                    View All Projects
-                </button>
+
+            <div class="project-card bg-dark rounded-xl p-6 card-hover" 
+                 data-title="Real Estate Digital Marketing"
+                 data-image-src="cluvestates.jpg"
+                 data-tags="Content Strategy,Scriptwriting,Video Production,Instagram analytics"
+                 data-description="As part of the marketing team, I was responsible for executing property marketing strategies across various social media platforms. The primary focus was managing organic content and paid advertising campaigns on Instagram, Facebook, and TikTok to increase brand awareness and reach potential buyers. Each campaign was designed to drive traffic to optimized landing pages, with the main objective of consistently generating a stream of high-quality leads for the sales team to pursue.">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="cluvestates.jpg" alt="Real Estate Digital Marketing" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-xl font-bold mb-2 font-orbitron">Real Estate Digital Marketing</h3>
+                <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    Managed digital ad campaigns and landing page optimization for real estate developers, focusing on generating quality sales leads to support the sales team.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Content Strategy</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Scriptwriting</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Video Production</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Instagram analytics</span>
+                </div>
+                <button class="open-modal-btn text-primary hover:underline font-medium">View Case Study →</button>
+            </div>
+
+            <div class="project-card bg-dark rounded-xl p-6 card-hover"
+                data-title="AI Powered Quantitative Trading Assistant"
+                data-image-src="n8n.png"
+                data-tags="AI Agents,API Integration,NLP,Web Scraping"
+                data-description="Developed an iterative AI system for quantitative crypto market analysis. This project centers on creating a feedback loop where an AI agent (Google Gemini) not only predicts but also learns from its performance. Trading predictions, generated from technical, on-chain, and sentiment data, are automatically logged to Google Sheets. Actual trade outcomes, input by the user via a Telegram Bot, are then used to update the historical record. In each new iteration, the AI analyzes this performance history to identify patterns and improve its accuracy, simulating an adaptive machine learning process.">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="n8n.png" alt="AI Powered Quantitative Trading Assistant" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-xl font-bold mb-2 font-orbitron">AI Powered Quantitative Trading Assistant</h3>
+                <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    Designed an autonomous AI agent in n8n that analyzes multi-aspect market data (technical, on-chain, news) to generate trading strategies delivered via Telegram.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">AI Agents</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">API Integration</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">NLP</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Web Scraping</span>
+                     <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">COT</span>
+                </div>
+                <button class="open-modal-btn text-primary hover:underline font-medium">View Case Study →</button>
+            </div>
+
+             <div class="project-card bg-dark rounded-xl p-6 card-hover"
+                data-title="TikTok Content Strategy"
+                data-image-src="satukata.png"
+                data-tags="Scriptwriting,TikTok Analytics,Content Strategy,Video Production"
+                data-description="Fully managed the content strategy and execution for a TikTok account focused on motivation and self-development. Responsibilities covered the entire production cycle: from idea research and trend analysis, scriptwriting, to editing videos into engaging content. Beyond production, the role involved actively building and nurturing the community through two-way interaction to increase audience engagement and loyalty, ensuring healthy and sustainable account growth.">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="satukata.png" alt="TikTok Content Strategy" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-xl font-bold mb-2 font-orbitron">TikTok Content Strategy</h3>
+                <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    Managed the full content lifecycle for a motivational TikTok account, from strategy and video production to fostering an engaged community.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Scriptwriting</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">TikTok Analytics</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Content Strategy</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Video Production</span>
+                </div>
+                <button class="open-modal-btn text-primary hover:underline font-medium">View Case Study →</button>
+            </div>
+
+            <div class="project-card bg-dark rounded-xl p-6 card-hover"
+                data-title="TikTok Shop E-commerce Management"
+                data-image-src="earnest.jpg"
+                data-tags="E-commerce Management,Affiliate Marketing,Performance Analysis,TikTok Shop,Content Strategy"
+                data-description="Managed and grew a TikTok Shop affiliate store from the ground up, focusing on the electronics niche (audio devices). Responsibilities included market trend analysis to curate a high-potential product catalog. Developed and executed a content strategy to drive traffic and engagement. Continuously monitored and analyzed key e-commerce metrics such as Gross Merchandise Value (GMV), product visitors, conversion rates, and sales data to optimize marketing efforts and maximize revenue.">
+                <div class="overflow-hidden rounded-lg mb-4">
+                    <img src="earnest.jpg" alt="TikTok Shop E-commerce Management" class="w-full h-48 object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <h3 class="text-xl font-bold mb-2 font-orbitron">TikTok Shop E-commerce Management</h3>
+                <p class="text-gray-300 mb-4 text-sm leading-relaxed">
+                    Managed a TikTok Shop affiliate store, handling product curation, promotional content strategy, and performance analysis to drive sales growth and revenue.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">E-commerce Management</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Affiliate Marketing</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">Performance Analysis</span>
+                    <span class="bg-darker text-primary px-3 py-1 rounded-full text-xs">TikTok Shop</span>
+                </div>
+                <button class="open-modal-btn text-primary hover:underline font-medium">View Case Study →</button>
             </div>
         </div>
-    </section>
+
+        <div id="view-all-container" class="text-center mt-12">
+            <button id="view-all-projects-btn" class="border-2 border-primary text-primary font-bold py-3 px-8 rounded-full btn-neon hover:bg-primary hover:bg-opacity-10 transition-all">
+                View All Projects
+            </button>
+        </div>
+    </div>
+</section>
 
     <section id="skills" class="py-20 bg-darker px-6">
         <div class="container mx-auto">
@@ -507,7 +556,7 @@
                         <div class="bg-darker p-6 rounded-lg">
                             <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
                                 <h3 class="text-xl font-bold font-orbitron">Ray White Grand Pakuwon</h3>
-                                <span class="text-primary">Jul 2024 - Apr 2025</span>
+                                <span class="text-primary">Jul 2024 - Feb 2025</span>
                             </div>
                             <h4 class="text-lg mb-3">Marketing Executive</h4>
                             <p class="text-gray-300">
@@ -662,6 +711,41 @@
                     }
                 });
             });
+
+             // --- SCRIPT UNTUK TOMBOL "VIEW ALL PROJECTS" ---
+        const viewAllBtn = document.getElementById('view-all-projects-btn');
+        const viewAllContainer = document.getElementById('view-all-container');
+        const projectCards = document.querySelectorAll('.project-card');
+        const initialVisibleCount = 3;
+
+        // Sembunyikan proyek yang lebih dari 3 saat halaman dimuat
+        projectCards.forEach((card, index) => {
+            if (index >= initialVisibleCount) {
+                card.classList.add('hidden');
+            }
+        });
+        
+        // Jika jumlah proyek 3 atau kurang, sembunyikan tombol
+        if (projectCards.length <= initialVisibleCount) {
+            if(viewAllContainer) {
+                viewAllContainer.style.display = 'none';
+            }
+        }
+
+        // Fungsi untuk menampilkan semua proyek saat tombol diklik
+        function showAllProjects() {
+            projectCards.forEach(card => {
+                card.classList.remove('hidden');
+            });
+            if(viewAllContainer) {
+                viewAllContainer.style.display = 'none'; // Sembunyikan tombol setelah diklik
+            }
+        }
+
+        // Tambahkan event listener ke tombol
+        if (viewAllBtn) {
+            viewAllBtn.addEventListener('click', showAllProjects);
+        }
 
             // Back to top button
             const backToTopButton = document.getElementById('back-to-top');
